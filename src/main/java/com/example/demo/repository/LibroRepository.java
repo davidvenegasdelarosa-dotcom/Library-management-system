@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository; //Biblioteca con c
 import org.springframework.stereotype.Repository; //Etiqueta de spring
 
 @Repository
-public interface LibroRepository extends JpaRepository<Libro, Long>{
+public interface LibroRepository extends JpaRepository<Libro, Long>{ //Creamos un repositorio de la clase libro, cuya variable primaria es de tipo Long
     //No escribimos nada aqui, ya heredamos de JpaRepository métodos como deleteById() y demás
 }
 
