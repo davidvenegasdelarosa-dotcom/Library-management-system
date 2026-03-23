@@ -1,0 +1,10 @@
+package com.example.demo.repository;
+import com.example.demo.model.Libro; //Importamos la clase libro
+import org.springframework.data.jpa.repository.JpaRepository; //Biblioteca con ciertas funciones importantes
+import org.springframework.stereotype.Repository; //Etiqueta de spring
+
+@Repository
+public interface LibroRepository extends JpaRepository<Libro, Long>{
+    //No escribimos nada aqui, ya heredamos de JpaRepository métodos como deleteById() y demás
+}
+
