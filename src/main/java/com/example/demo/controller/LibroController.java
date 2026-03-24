@@ -12,27 +12,27 @@ public class LibroController{
     @Autowired
     private LibroRepository libroRepository;
 
-    @GetMapping("/api/libros")
+    @GetMapping("/todos")
     public List<Libro> mostrar_libros(){
         return libroRepository.findAll(); //Devolvemos una lista dinamica con todos los libros de la base de datos
     }
 
-    @PostMapping("/api/libros")
-    public Libro guardar_libro(Libro libro){
+    @PostMapping
+    public Libro guardar_libro(@RequestBody Libro libro){
         return libroRepository.save(libro);
     }
 
-    @GetMapping("{idd}")
+    @GetMapping("/find/{idd}")
     public Libro buscar_por_id(@PathVariable Long idd){
         return libroRepository.findById(idd).orElse(null);
     }
 
-    @DeleteMapping("{idd}")
-    public void eliminar_por_id(@PathVariable Long idd){
+    @DeleteMapping("/delete/{idd}")
+    public String eliminar_por_id(@PathVariable Long idd){
         if(libroRepository.existsById(idd)){ //Comprobamos que el libro este en la base de datos antes de intentar borrarlo
             libroRepository.deleteById(idd);
-            System.out.println("El libro con el id " + idd + " ha sido eliminado satisfactoriamente");
-        } else System.out.println("No hay ningún libro que corresponda al id: " + idd + "\n");
+            return("El libro con el id " + idd + " ha sido eliminado satisfactoriamente");
+        } else return("No hay ningún libro que corresponda al id: " + idd + "\n");
     }
 }
     
