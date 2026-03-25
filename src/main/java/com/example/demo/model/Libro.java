@@ -10,8 +10,14 @@ public class Libro{
     private String titulo;
     private String autor;
     public Libro(){};
+    public void Libro_sinId(){};
     public Libro(Long id_, String titulo_, String autor_){ //Constructor de un libro
         this.id=id_;
+        this.titulo=titulo_;
+        this.autor=autor_;
+    }
+
+    public void Libro_sinId(String titulo_, String autor_){
         this.titulo=titulo_;
         this.autor=autor_;
     }

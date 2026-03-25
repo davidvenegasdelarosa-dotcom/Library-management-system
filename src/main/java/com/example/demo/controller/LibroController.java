@@ -26,13 +26,5 @@ public class LibroController{
     public Libro buscar_por_id(@PathVariable Long idd){
         return libroRepository.findById(idd).orElse(null);
     }
-
-    @DeleteMapping("/delete/{idd}")
-    public String eliminar_por_id(@PathVariable Long idd){
-        if(libroRepository.existsById(idd)){ //Comprobamos que el libro este en la base de datos antes de intentar borrarlo
-            libroRepository.deleteById(idd);
-            return("El libro con el id " + idd + " ha sido eliminado satisfactoriamente");
-        } else return("No hay ningún libro que corresponda al id: " + idd + "\n");
-    }
 }
-    
+
