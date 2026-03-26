@@ -8,5 +8,6 @@ import java.util.List;
 public interface LibroRepository extends JpaRepository<Libro, Long>{ //Creamos un repositorio de la clase libro, cuya variable primaria es de tipo Long
     //No escribimos nada aqui, ya heredamos de JpaRepository métodos como deleteById() y demás
     List<Libro> findByAutorContainingIgnoreCase(String autor_);
+    boolean existsByTituloAndAutor(String titulo, String autor);
 }
 
