@@ -10,4 +10,8 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 4aae459 (cambio en pom-xml)
