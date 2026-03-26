@@ -2,7 +2,6 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication // <--- ¡Esta línea es la brújula de Maven!
@@ -11,8 +10,4 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-    @GetMapping("/hola") // Una ruta super simple
-    public String hola() {
-        return "Si ves esto, el servidor funciona, pero no ve tus otros archivos";
-    }
-}
+}///////buenas buena buenas buenas
