@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {console.log("¡Conexión es
 });
 function borrarConJS(boton){
     const id=boton.getAttribute('data-id');
-    fetch('/libros/delete' + id, {method: 'DELETE'})
+    fetch('/libros/delete/' + id, {method: 'DELETE'})
     .then(response => {
         if(response.status==200){
             document.getElementById('fila-'+id).remove();
@@ -46,10 +46,11 @@ function añadirConJS(){
         const nuevaFila = `
         <tr id="fila-${libroGuardado.id}">
             <td>${libroGuardado.id}</td>
-            <td>${libroGuardadoGuardado.titulo}</td>
+            <td>${libroGuardado.titulo}</td>
             <td>${libroGuardado.autor}</td>
             <td>
-                <button type="button" th:data-id="${libroGuardado.id} onclick="borrarConJS(this)">
+                <button type="button" data-id="${libroGuardado.id}" onclick="borrarConJS(this)"
+                style="background-color:#ff4d4d; color:white;border:none;padding:5px 10px;cursor:pointer;border-radius:4px">
                 Eliminar
                 </button>
             </td>
@@ -57,7 +58,7 @@ function añadirConJS(){
         tabla.innerHTML+=nuevaFila;
         //Limpiamos los buffers
         document.getElementById('nuevo-titulo').value='';
-        document.getElementById('nuevoo-autor').value='';
+        document.getElementById('nuevo-autor').value='';
     })
     .catch(error=>{
         alert(error.message);

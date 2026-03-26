@@ -54,11 +54,11 @@ public class ViewController{
 
     @PostMapping("/libros/add")
     @ResponseBody
-    public ResponseEntity<?> añadir_libro(@RequestParam String autor_, @RequestParam String titulo){
+    public ResponseEntity<?> añadir_libro(@RequestParam String autor, @RequestParam String titulo){
         try{
-            if(!libroRepository.existsByTituloAndAutor(titulo, autor_)){//nos aseguramos de que no hubiese un libro identico a este en la base de datos
+            if(!libroRepository.existsByTituloAndAutor(titulo, autor)){//nos aseguramos de que no hubiese un libro identico a este en la base de datos
             Libro libro = new Libro();
-            libro.Libro_sinId(titulo, autor_);
+            libro.Libro_sinId(titulo, autor);
             Libro guardado = libroRepository.save(libro);
             return ResponseEntity.status(HttpStatus.CREATED).body(guardado);
             } else return ResponseEntity.status(HttpStatus.CONFLICT).body("Este libro ya existe en la biblioteca");
