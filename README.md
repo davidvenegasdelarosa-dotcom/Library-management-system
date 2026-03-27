@@ -20,8 +20,7 @@
   # 📦 Instalación y ejecución:
   * 1. Es necesario tener instalado Java 17 o superior y PostgreSQL.
   * 2. Ejecutaremos el siguiente comando en la terminal de PostgreSQL: CREATE DATABASE biblioteca_bd;
-  * 3. Revisaremos el archivo src/main/resources/application.properties, y nos aseguramos de que spring.datasource.username y spring.datasource.password
-  * coinciden con la configuración de PostgreSQL.
+  * 3. Revisaremos el archivo src/main/resources/application.properties, y nos aseguramos de que spring.datasource.username y spring.datasource.password coinciden      con la configuración de PostgreSQL.
   * 4. Clonamos el repositorio: git clone [https://github.com/davidvenegasdelarosa-dotcom/web-biblioteca.git]
   * 5. Entramos en la carpeta del proyecto: cd name_folder.
   * 6. Lanza la aplicación: .\mvnw.cmd spring-boot:run
