@@ -25,3 +25,6 @@
   * 5. Entramos en la carpeta del proyecto: cd name_folder.
   * 6. Lanza la aplicación: .\mvnw.cmd spring-boot:run
   * 7. Abre en tu navegador: http://localhost:8081/libros
+<p align="center">
+  <img src="biblioteca.png" alt="Captura del proyecto" width="600">
+</p>
